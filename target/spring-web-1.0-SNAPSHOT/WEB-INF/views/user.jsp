@@ -1,0 +1,22 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+
+<h2>All Users:</h2>
+
+<c:forEach var="u" items="${users}">
+    <h4>First name: <c:out value="${u.firstName}"/></h4>
+    <h4>Last name: <c:out value="${u.lastName}"/></h4>
+    <h4>Roles:</h4>
+    <c:forEach var="r" items="${u.roles}">
+        <h5>Role name: ${r.name}</h5>
+    </c:forEach>
+    <hr style="margin-bottom: 10px"/>
+</c:forEach>
+
+</body>
+</html>
